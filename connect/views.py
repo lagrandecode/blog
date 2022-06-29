@@ -1,5 +1,5 @@
 from multiprocessing import context
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Question
 from .forms import FormConnect
 
@@ -30,8 +30,20 @@ def question_retrieve(request,pk):
 
 
 
+# def question_create(request):
+#     form = FormConnect()
+#     context = {
+#         "form" : form
+#     }
+#     return render(request, "create.html", context)
+
+
 def question_create(request):
-    form = FormConnect()
+    if request.method == "POST":
+        form = FormConnect(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
     context = {
         "form" : form
     }
