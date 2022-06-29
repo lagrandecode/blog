@@ -9,7 +9,7 @@ class Question(models.Model):
     grade = models.CharField(max_length=50)
     cadre = models.CharField(max_length=50)
     address = models.CharField(max_length=50)
-    age = models.IntegerField()
+    age = models.IntegerField() 
 
 
-    
+
