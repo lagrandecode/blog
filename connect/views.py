@@ -64,4 +64,11 @@ def question_update(request,pk):
         "form" : form
     }
     return render(request, "update.html", context)
+
+#deleting from database 
+
+def question_delete(request,pk):
+    retrieve = Question.objects.get(id=pk)
+    retrieve.delete()
+    return redirect('/')
     
