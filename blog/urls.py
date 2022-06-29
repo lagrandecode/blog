@@ -7,7 +7,7 @@ from connect.views import question_create
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('list/', question_list),
+    path('', question_list),
     path('retrieve/<pk>/', question_retrieve),
     path('create/',question_create)
 ] 
