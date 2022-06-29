@@ -39,6 +39,7 @@ def question_retrieve(request,pk):
 
 
 def question_create(request):
+    form = FormConnect()
     if request.method == "POST":
         form = FormConnect(request.POST)
         if form.is_valid():
@@ -48,4 +49,19 @@ def question_create(request):
         "form" : form
     }
     return render(request, "create.html", context)
+
+#CREATING UPDATE 
+
+def question_update(request,pk):
+    retrieve = Question.objects.get(id=pk)
+    form = FormConnect(instance=retrieve)
+    if request.method == "POST":
+        form = FormConnect(request.POST, instance=retrieve)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    context = {
+        "form" : form
+    }
+    return render(request, "update.html", context)
     
