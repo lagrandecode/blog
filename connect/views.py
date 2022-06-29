@@ -1,6 +1,7 @@
 from multiprocessing import context
 from django.shortcuts import render
 from .models import Question
+from .forms import FormConnect
 
 # Create your views here.
 
@@ -25,3 +26,14 @@ def question_retrieve(request,pk):
         "retrieve" : retrieve
     }
     return render(request, "retrieve.html", context)
+
+
+
+
+def question_create(request):
+    form = FormConnect()
+    context = {
+        "form" : form
+    }
+    return render(request, "create.html", context)
+    
