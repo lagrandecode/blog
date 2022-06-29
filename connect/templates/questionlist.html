@@ -1,5 +1,12 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
 {% for list in question %}
 
 <a href="/retrieve/{{ list.id }}/">{{ list.title }}</a>
 
 {% endfor %}
+
+{% endblock %}
