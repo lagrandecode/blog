@@ -1,5 +1,5 @@
+from multiprocessing import context
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import Question
 
 # Create your views here.
@@ -7,8 +7,6 @@ from .models import Question
 #creating starting page 
 
 
-def index(request):
-    return HttpResponse('hello world')
 
 #lets perform crud operation 
 
@@ -17,4 +15,13 @@ def question_list(request):
     context = {
         'question' : question
     }
-    return render(request, 'questionlist.html', context)
+    return render(request, "questionlist.html", context)
+
+# using the below function for retrieving 
+
+def question_retrieve(request,pk):
+    retrieve = Question.objects.get(id=pk)
+    context = {
+        "retrieve" : retrieve
+    }
+    return render(request, "retrieve.html", context)
