@@ -8,6 +8,18 @@ body{
 
 .create{
     background-color: blueviolet;
+    width: 50%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin: auto;
+
+    
+}
+
+.buttoncreate{
+    align-items: center;
 }
 
 
