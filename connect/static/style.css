@@ -1,3 +1,14 @@
-.body{
+body{
+    background-color: blanchedalmond;
+}
+
+.list{
     background-color: blue;
 }
+
+.create{
+    background-color: blueviolet;
+}
+
+
+
