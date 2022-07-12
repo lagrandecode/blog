@@ -10,7 +10,9 @@
 <body>
     <div class="mx-auto max-w-5xl px-4 py-4">
         {% block content %}
-        
+        <h1>hello world</h1>
+        {% load static %}
+<img src="{% static '\img1.jpg' %}" alt="my image">
         {% endblock content %}
 
     </div>
